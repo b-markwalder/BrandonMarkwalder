@@ -1,0 +1,74 @@
+/* variables */
+:root {
+  --ff-primary: "Courier Prime", monospace;
+
+  --fs-title: 4em;
+  --fs-text: 1.5em;
+
+  --clr-light: #E6E5E2;
+  --clr-medium: #cecfc9;
+  --clr-dark: #21201D;
+}
+
+/* reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--ff-primary);
+  background-color: var(--clr-light);
+}
+
+#nav-links {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: var(--clr-light);
+  z-index: 1000;
+}
+
+#nav-links ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  float: right;
+}
+
+#nav-links ul li {
+  float: left;
+}
+
+#nav-links a {
+  font-weight: 400;
+  display: block;
+  color: var(--clr-dark);
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+#nav-links a:hover {
+  text-decoration: underline;
+  text-underline-offset: 7px;
+}
+
+h1 {
+  margin: 49vh auto;
+  text-align: center;
+  font-size: 1.125rem;
+}
+
+h1 a {
+  color: var(--clr-dark);
+  text-decoration: none;
+}
+
+h1 a:hover {
+  text-decoration: underline;
+  text-underline-offset: 7px;
+}
+
