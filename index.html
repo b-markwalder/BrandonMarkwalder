@@ -25,12 +25,11 @@
 </nav>
 
   <section id="about">
-    <p>:)</p>
-    <h1><a href="assets/CV_BrandonMarkwalder.pdf" title="Open my CV" target=”_blank”>Brandon Markwalder</a> a Web Developer.</h1>
+    <h1><a href="assets/CV_BrandonMarkwalder.pdf" title="Open my CV" target="_blank">Brandon Markwalder</a> a Web Developer.</h1>
   </section>
 
   <section id="projects">
-    <h2>My Projects</h2>
+    <h2>Projects</h2>
     <div class="project-tile">
       <h3>Survey Form</h3>
       <div class="img-placeholder">
@@ -63,24 +62,57 @@
 
   <section id="skills">
     <h2>Skills</h2>
-    <div class="wd-skills"><h3>HTML</h3></div>
-    <div class="wd-skills"><h3>CSS</h3></div>
-    <div class="wd-skills"><h3>JS</h3></div>
+    <div class="skill-box">
+    <div class="wd-skills"><p>HTML</p></div>
+    <div class="wd-skills"><p>CSS</p></div>
+    <div class="wd-skills"><p>JavaScript</p></div>
+    </div>
+    <p>Stay tuned, I'm learning new skills!</p>
   </section>
 
   <section id="contact">
-    <h2>where to find me</h2>
+    <h2>Contact</h2>
+
+    <form action="">
+      <div class="contact-wrapper">
+          <div class="left-section">
+              <div class="name-input field">
+                  <input type="text" id="name" class="item" placeholder="Full Name:" autocomplete="off" required>
+              </div>
+              <div class="email-input field">
+                  <input type="email" id="email" class="item" placeholder="Email:" autocomplete="off" required>
+              </div>
+          </div>
+          <div class="middle-section">
+              <div class="textarea-input field">
+                  <textarea id="message" class="item" cols="2" rows="5" placeholder="Message..." autocomplete="off" required></textarea>
+              </div>
+          </div>
+          <div class="right-section">
+              <button type="submit">Submit</button>
+          </div>
+      </div>
+  </form>
+
+  <div id="modal" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <p id="modal-message"></p>
+    </div>
+  </div>
+
     <div class="icons">
-    <a id="profile-link" target="_blank" href="https://mail.google.com/"><i class="fa-solid fa-square-envelope fa-2xl"></i></a>
-    <a id="profile-link" target="_blank" href="https://linkedin.com/"><i class="fa-brands fa-linkedin fa-2xl"></i></a>
-    <a id="profile-link" target="_blank" href="https://x.com/"><i class="fa-brands fa-square-x-twitter fa-2xl"></i></i>
-    <a id="profile-link" target="_blank" href="https://instagram.com/"><i class="fa-brands fa-square-instagram fa-2xl"></i></a>
-    <a id="profile-link" target="_blank" href="https://github.com/"><i class="fa-brands fa-square-github fa-2xl"></i></a>
+    <a id="profile-link" target="_blank" href="mailto:markwalder97@hotmail.com"><i class="fa-solid fa-square-envelope fa-2x icon"></i></a>
+    <a id="profile-link" target="_blank" href="https://www.linkedin.com/in/brandon-markwalder-708436279/?locale=en_US"><i class="fa-brands fa-linkedin fa-2x icon"></i></a>
+    <a id="profile-link" target="_blank" href="https://github.com/b-markwalder"><i class="fa-brands fa-square-github fa-2x icon"></i></a>
     </div>
   </section>
+
   <footer>
   <p>&#169 2024 Brandon Markwalder. All rights reserved.</p>
   </footer>
+
+  <script src="https://smtpjs.com/v3/smtp.js"></script>
   <script src="script.js"></script>
 </body>
 </html>
