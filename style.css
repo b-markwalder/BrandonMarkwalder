@@ -2,7 +2,7 @@
 :root {
   --ff-primary: "Courier Prime", monospace;
 
-  --clr-light: #E6E5E2;
+  --clr-light: #FCFCFC;
   --clr-medium: #cecfc9;
   --clr-dark: #21201D;
 }
@@ -101,8 +101,92 @@ h2 {
 }
 
 h3 {
+  height: 3rem;
   font-size: 1rem;
-  font-weight: 400;
+  font-weight: 500;
+}
+
+.project-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 30px;
+  position: relative;
+}
+
+.project-wrapper .slider {
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: calc(100% / 2) - 10px;
+  gap: 20px;
+  overflow: hidden;
+}
+
+.project-wrapper i {
+  height: 2rem;
+  width: 2rem;
+  color: var(--clr-dark);
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.project-wrapper i:first-child {
+  left: 50px;
+}
+
+.project-wrapper i:last-child {
+  right: 50px;
+}
+
+.card {
+  width: 400px;
+  min-width: 300px;
+  height: 500px;
+  list-style: none;
+  border: 1.5px solid var(--clr-dark);
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.card .img img {
+  width: 100%;
+  object-fit: cover;
+  border: 1.5px solid var(--clr-dark);
+}
+.img-placeholder {
+  width: 100%;
+  height: 205px;
+  border: 1.5px solid var(--clr-dark);
+  margin-bottom: 5px;
+}
+
+.card p {
+  font-size: 0.9rem;
+  line-height: 1.3rem;
+  margin-top: 1em;
+  width: 100%;
+  height: 140px;
+}
+
+.card a {
+  text-align: center;
+  color: var(--clr-dark);
+  text-decoration: none;
+}
+
+.card a:hover {
+  text-decoration: underline;
+  text-underline-offset: 7px;
+}
+
+.card a:active {
+  padding: 0.2rem;
+  background-color: var(--clr-dark);
+  color: var(--clr-light);
+  text-decoration: none;
 }
 
 #skills {
@@ -170,7 +254,7 @@ textarea {
 }
 
 .field {
-  margin-bottom: 6px;
+  margin-bottom: 2.5px;
 }
 
 .item {
@@ -196,7 +280,7 @@ textarea {
   border-bottom: 3px solid var(--clr-dark);
 }
 
-button {
+.right-section  button {
   font-family: var(--ff-primary);
   padding: 1em 1.5em;
   background-color: transparent;
@@ -206,12 +290,12 @@ button {
   cursor: pointer;
 }
 
-button:hover {
+.right-section  button:hover {
   text-decoration: underline;
   text-underline-offset: 7px;
 }
 
-button:active {
+.right-section  button:active {
   background-color: var(--clr-dark);
   color: var(--clr-light);
 }
@@ -262,7 +346,7 @@ button:active {
 .icons {
   height: 50px;
   width: 100%;
-  margin: 5em 0;
+  margin-top: 5em;
   text-align: center;
 }
 
@@ -282,7 +366,30 @@ button:active {
   color: var(--clr-light);
 }
 
+.my-cv {
+  text-align: center;
+}
+
+.cv {
+  font-family: var(--ff-primary);
+  font-weight: 500;
+  font-size: 1rem;
+  color: var(--clr-light);
+  background-color: var(--clr-dark);
+  padding: 0.25em 4em;
+  margin: 4em 0 6em 0;
+  text-decoration: none;
+  border-radius: 2px;
+  display: inline-block;
+  transition: transform 0.3s ease;
+}
+
+.cv:hover {
+  transform: scale(1.05);
+}
+
 footer p {
+  font-size: 0.75rem;
   text-align: center;
   padding: 1em;
 }
