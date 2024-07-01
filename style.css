@@ -2,6 +2,12 @@
 :root {
   --ff-primary: "Courier Prime", monospace;
 
+  --fs-large: 1.25rem;
+  --fs-medium: 1.125rem;
+  --fs-small: 1rem;
+  --fs-detail: 0.9rem;
+
+
   --clr-light: #FCFCFC;
   --clr-medium: #cecfc9;
   --clr-dark: #21201D;
@@ -40,10 +46,11 @@ body {
 }
 
 #nav-links ul li:last-child {
-  margin-right: 70px;
+  margin-right: 25px;
 }
 
 #nav-links a {
+  font-size: var(--fs-small);
   font-weight: 400;
   display: block;
   color: var(--clr-dark);
@@ -70,7 +77,7 @@ body {
 h1 {
   margin: 49vh 0 35vh;
   text-align: center;
-  font-size: 1.125rem;
+  font-size: var(--fs-large);
 }
 
 h1 a {
@@ -85,6 +92,7 @@ h1 a:hover {
 
 h1 a:active {
   padding: 0.25em 0.5em;
+  text-decoration: none;
   background-color: var(--clr-dark);
   color: var(--clr-light);
 }
@@ -95,34 +103,30 @@ h1 a:active {
 }
 
 h2 {
-  font-size: 1rem;
+  font-size: var(--fs-medium);
   text-align: center;
   margin: 125px 0 100px 0;
 }
 
 h3 {
   height: 3rem;
-  font-size: 1rem;
+  font-size: var(--clr-medium);
   font-weight: 500;
 }
 
-.project-wrapper {
+.container {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 0 30px;
+}
+
+.wrapper {
+  max-width: 1300px;
+  width: 100%;
   position: relative;
 }
 
-.project-wrapper .slider {
-  display: grid;
-  grid-auto-flow: column;
-  grid-auto-columns: calc(100% / 2) - 10px;
-  gap: 20px;
-  overflow: hidden;
-}
-
-.project-wrapper i {
+.wrapper i {
   height: 2rem;
   width: 2rem;
   color: var(--clr-dark);
@@ -132,47 +136,66 @@ h3 {
   transform: translateY(-50%);
 }
 
-.project-wrapper i:first-child {
-  left: 50px;
+.wrapper i:active{
+  transform: translateY(-50%) scale(0.85);
 }
 
-.project-wrapper i:last-child {
-  right: 50px;
+.wrapper i:first-child{
+  left: -50px;
 }
 
-.card {
+.wrapper i:last-child{
+  right: -70px;
+}
+
+.wrapper .carousel{
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: calc((100% / 3) - 12px);
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  gap: 28px;
+  scroll-behavior: smooth;
+  scrollbar-width: none;
+}
+
+.carousel::-webkit-scrollbar {
+  display: none;
+}
+
+.carousel.no-transition {
+  scroll-behavior: auto;
+}
+
+.carousel.dragging {
+  scroll-snap-type: none;
+  scroll-behavior: auto;
+}
+
+.carousel.dragging .card {
+  cursor: grab;
+  user-select: none;
+}
+
+.carousel :where(.card, .img) {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.carousel .card {
+  scroll-snap-align: start;
   width: 400px;
   min-width: 300px;
   height: 500px;
   list-style: none;
   border: 1.5px solid var(--clr-dark);
-  padding: 1rem;
+  padding: 0 1rem;
   display: flex;
   flex-direction: column;
 }
 
-.card .img img {
-  width: 100%;
-  object-fit: cover;
-  border: 1.5px solid var(--clr-dark);
-}
-.img-placeholder {
-  width: 100%;
-  height: 205px;
-  border: 1.5px solid var(--clr-dark);
-  margin-bottom: 5px;
-}
-
-.card p {
-  font-size: 0.9rem;
-  line-height: 1.3rem;
-  margin-top: 1em;
-  width: 100%;
-  height: 140px;
-}
-
 .card a {
-  text-align: center;
   color: var(--clr-dark);
   text-decoration: none;
 }
@@ -183,10 +206,31 @@ h3 {
 }
 
 .card a:active {
-  padding: 0.2rem;
+  padding: 0.25em 0.5em;
+  text-decoration: none;
   background-color: var(--clr-dark);
   color: var(--clr-light);
-  text-decoration: none;
+}
+
+.card .img img {
+  width: 100%;
+  object-fit: cover;
+  border: 1.5px solid var(--clr-dark);
+}
+
+.carousel p {
+  font-size: var(--fs-detail);
+  line-height: 1.3rem;
+  margin-top: 1em;
+  width: 100%;
+  height: 140px;
+}
+
+.img-placeholder {
+  width: 100%;
+  height: 205px;
+  border: 1.5px solid var(--clr-dark);
+  margin-bottom: 5px;
 }
 
 #skills {
@@ -208,7 +252,7 @@ h3 {
 }
 
 .wd-skills p {
-  font-size: 1rem;
+  font-size: var(--fs-small);
   font-weight: 400;
   text-align: center;
   vertical-align: middle;
@@ -260,7 +304,7 @@ textarea {
 .item {
   font-family: var(--ff-primary);
   width: 100%;
-  padding-bottom: 1em;
+  padding: 0.2rem 0 1em 0.3rem;
   background-color: var(--clr-light);
   border-right: 1.5px solid var(--clr-dark);
   border-bottom: 1.5px solid var(--clr-dark);
@@ -271,7 +315,7 @@ textarea {
 .item::placeholder {
   font-family: var(--ff-primary);
   color: var(--clr-dark);
-  font-size: 1rem;
+  font-size: var(--fs-medium);
 }
 
 .item:focus {
@@ -286,7 +330,7 @@ textarea {
   background-color: transparent;
   border: none;
   color: var(--clr-dark);
-  font-size: 1rem;
+  font-size: var(--fs-medium);
   cursor: pointer;
 }
 
@@ -373,7 +417,7 @@ textarea {
 .cv {
   font-family: var(--ff-primary);
   font-weight: 500;
-  font-size: 1rem;
+  font-size: var(--fs-small);
   color: var(--clr-light);
   background-color: var(--clr-dark);
   padding: 0.25em 4em;
@@ -389,7 +433,7 @@ textarea {
 }
 
 footer p {
-  font-size: 0.75rem;
+  font-size: var(--fs-detail);
   text-align: center;
   padding: 1em;
 }
