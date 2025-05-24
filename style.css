@@ -1,439 +1,99 @@
-/* variables */
+/* --- CSS Variables for Easy Customization --- */
 :root {
-  --ff-primary: "Courier Prime", monospace;
-
-  --fs-large: 1.25rem;
-  --fs-medium: 1.125rem;
-  --fs-small: 1rem;
-  --fs-detail: 0.9rem;
-
-
-  --clr-light: #FCFCFC;
-  --clr-medium: #cecfc9;
-  --clr-dark: #21201D;
-}
-
-/* reset */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-body {
-  font-family: var(--ff-primary);
-  background-color: var(--clr-light);
-}
-
-#nav-links {
-  position: fixed;
-  top: 0;
-  width: 100%;
-  background-color: var(--clr-light);
-  z-index: 1000;
-}
-
-#nav-links ul {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-  overflow: hidden;
-  float: right;
-}
-
-#nav-links ul li {
-  float: left;
-}
-
-#nav-links ul li:last-child {
-  margin-right: 25px;
-}
-
-#nav-links a {
-  font-size: var(--fs-small);
-  font-weight: 400;
-  display: block;
-  color: var(--clr-dark);
-  text-align: center;
-  padding: 14px 16px;
-  text-decoration: none;
-}
-
-#nav-links a:hover {
-  text-decoration: underline;
-  text-underline-offset: 7px;
-}
-
-#nav-links a:active {
-  background-color: var(--clr-dark);
-  color: var(--clr-light);
-}
-
-#about {
-  scroll-margin-top: 50vh;
-  height: 40vh;
-}
-
-h1 {
-  margin: 49vh 0 35vh;
-  text-align: center;
-  font-size: var(--fs-large);
-}
-
-h1 a {
-  color: var(--clr-dark);
-  text-decoration: none;
-}
-
-h1 a:hover {
-  text-decoration: underline;
-  text-underline-offset: 7px;
-}
-
-h1 a:active {
-  padding: 0.25em 0.5em;
-  text-decoration: none;
-  background-color: var(--clr-dark);
-  color: var(--clr-light);
-}
-
-#projects {
-  scroll-margin-top: 100px;
-  height: 85vh;
-}
-
-h2 {
-  font-size: var(--fs-medium);
-  text-align: center;
-  margin: 125px 0 100px 0;
-}
-
-h3 {
-  height: 3rem;
-  font-size: var(--clr-medium);
-  font-weight: 500;
-}
-
-.container {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.wrapper {
-  max-width: 1300px;
-  width: 100%;
-  position: relative;
-}
-
-.wrapper i {
-  height: 2rem;
-  width: 2rem;
-  color: var(--clr-dark);
-  cursor: pointer;
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-}
-
-.wrapper i:active{
-  transform: translateY(-50%) scale(0.85);
-}
-
-.wrapper i:first-child{
-  left: -50px;
-}
-
-.wrapper i:last-child{
-  right: -70px;
-}
-
-.wrapper .carousel{
-  display: grid;
-  grid-auto-flow: column;
-  grid-auto-columns: calc((100% / 3) - 12px);
-  overflow-x: auto;
-  scroll-snap-type: x mandatory;
-  gap: 28px;
-  scroll-behavior: smooth;
-  scrollbar-width: none;
-}
-
-.carousel::-webkit-scrollbar {
-  display: none;
-}
-
-.carousel.no-transition {
-  scroll-behavior: auto;
-}
-
-.carousel.dragging {
-  scroll-snap-type: none;
-  scroll-behavior: auto;
-}
-
-.carousel.dragging .card {
-  cursor: grab;
-  user-select: none;
-}
-
-.carousel :where(.card, .img) {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.carousel .card {
-  scroll-snap-align: start;
-  width: 400px;
-  min-width: 300px;
-  height: 500px;
-  list-style: none;
-  border: 1.5px solid var(--clr-dark);
-  padding: 0 1rem;
-  display: flex;
-  flex-direction: column;
-}
-
-.card a {
-  color: var(--clr-dark);
-  text-decoration: none;
-}
-
-.card a:hover {
-  text-decoration: underline;
-  text-underline-offset: 7px;
-}
-
-.card a:active {
-  padding: 0.25em 0.5em;
-  text-decoration: none;
-  background-color: var(--clr-dark);
-  color: var(--clr-light);
-}
-
-.card .img img {
-  width: 100%;
-  object-fit: cover;
-  border: 1.5px solid var(--clr-dark);
-}
-
-.carousel p {
-  font-size: var(--fs-detail);
-  line-height: 1.3rem;
-  margin-top: 1em;
-  width: 100%;
-  height: 140px;
-}
-
-.img-placeholder {
-  width: 100%;
-  height: 205px;
-  border: 1.5px solid var(--clr-dark);
-  margin-bottom: 5px;
-}
-
-#skills {
-  scroll-margin-top: 100px;
-  height: 85vh;
-}
-
-.skill-box {
-  width: 100%;
-  text-align: center;
-}
-
-.wd-skills {
-  display: inline-block;
-  width: 12.5rem;
-  height: 12.5rem;
-  margin: 0 25px 200px 25px;
-  border: 1.5px solid var(--clr-dark);
-}
-
-.wd-skills p {
-  font-size: var(--fs-small);
-  font-weight: 400;
-  text-align: center;
-  vertical-align: middle;
-  line-height: 12.5rem;  
-}
-
-#skills p {
-  text-align: center;
-}
-
-form {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.contact-wrapper {
-  padding: 20px;
-  width: 1000px;
-  display: flex;
-  gap: 20px;
-  align-items: flex-start;
-}
-
-.left-section {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  gap: 25px;
-}
-
-.middle-section {
-  flex: 1.5;
-}
-
-.right-section {
-  display: flex;
-  align-items: flex-start;
-}
-
-textarea {
-  resize: none;
-}
-
-.field {
-  margin-bottom: 2.5px;
-}
-
-.item {
-  font-family: var(--ff-primary);
-  width: 100%;
-  padding: 0.2rem 0 1em 0.3rem;
-  background-color: var(--clr-light);
-  border-right: 1.5px solid var(--clr-dark);
-  border-bottom: 1.5px solid var(--clr-dark);
-  border-top: none;
-  border-left: none;
-}
-
-.item::placeholder {
-  font-family: var(--ff-primary);
-  color: var(--clr-dark);
-  font-size: var(--fs-medium);
-}
-
-.item:focus {
-  outline: none;
-  border-right: 3px solid var(--clr-dark);
-  border-bottom: 3px solid var(--clr-dark);
-}
-
-.right-section  button {
-  font-family: var(--ff-primary);
-  padding: 1em 1.5em;
-  background-color: transparent;
-  border: none;
-  color: var(--clr-dark);
-  font-size: var(--fs-medium);
-  cursor: pointer;
-}
-
-.right-section  button:hover {
-  text-decoration: underline;
-  text-underline-offset: 7px;
-}
-
-.right-section  button:active {
-  background-color: var(--clr-dark);
-  color: var(--clr-light);
-}
-
-.modal {
-  display: none;
-  position: fixed;
-  z-index: 1000;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  overflow: auto;
-  background-color: rgb(0,0,0);
-  background-color: rgba(0,0,0,0.1);
-}
-
-.modal-content {
-  background-color: var(--clr-light);
-  margin: 15% auto;
-  padding: 50px;
-  border: 1.5px solid var(--clr-dark);
-  width: 50%;
-}
-
-#modal-message {
-  text-align: center;
-}
-
-.close {
-  margin-top: -40px;
-  margin-right: -35px;
-  color: var(--clr-dark);
-  float: right;
-  font-size: 28px;
-  font-weight: 700;
-}
-
-.close:hover,
-.close:focus {
-  color: var(--clr-dark);
-  text-decoration: underline;
-  text-underline-offset: 7px;
-  cursor: pointer;
-}
-
-
-.icons {
-  height: 50px;
-  width: 100%;
-  margin-top: 5em;
-  text-align: center;
-}
-
-.icon {
-  color: var(--clr-dark);
-  margin: 0 50px;
-  padding: 0.7rem;
-}
-
-.icon:hover {
-  text-decoration: underline solid var(--clr-dark) 1.5px;
-  text-underline-offset: 9px;
-}
-
-.icon:active {
-  background-color: var(--clr-dark);
-  color: var(--clr-light);
-}
-
-.my-cv {
-  text-align: center;
-}
-
-.cv {
-  font-family: var(--ff-primary);
-  font-weight: 500;
-  font-size: var(--fs-small);
-  color: var(--clr-light);
-  background-color: var(--clr-dark);
-  padding: 0.25em 4em;
-  margin: 4em 0 6em 0;
-  text-decoration: none;
-  border-radius: 2px;
-  display: inline-block;
-  transition: transform 0.3s ease;
-}
-
-.cv:hover {
-  transform: scale(1.05);
-}
-
-footer p {
-  font-size: var(--fs-detail);
-  text-align: center;
-  padding: 1em;
+    --bg-color: #dad7cd; /* Background color of the page */
+    --text-color: #262626; /* Color of the button text */
+    /* Use the particle color for the icon */
+    --icon-color: rgba(19, 42, 19, 0.7); 
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+    background: var(--bg-color); 
+    height: 100%;
+    overflow: hidden; 
+    font-family: "Anton", sans-serif; 
+    touch-action: none; 
+}
+
+canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1; 
+}
+
+.button-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); 
+    padding: 15px 30px; 
+    border-radius: 50px; 
+    background-color: transparent; 
+    z-index: 2; 
+    cursor: pointer; 
+    user-select: none; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    white-space: nowrap; 
+}
+
+.button-container span {
+    font-size: clamp(16px, 4vw, 30px); 
+    color: var(--text-color); 
+}
+
+/* --- Instagram Icon Link (Minimalist) --- */
+.instagram-icon-link {
+    position: fixed; 
+    bottom: 20px;    
+    left: 50%;       
+    transform: translateX(-50%); 
+    z-index: 10;     
+    display: flex; 
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: transform 0.2s ease; 
+}
+
+.instagram-icon-link:hover {
+    transform: translateX(-50%) scale(1.1); 
+}
+
+/* Style for Font Awesome icon (i tag) */
+.instagram-icon-link i {
+    font-size: 25px; /* Control icon size with font-size */
+    color: var(--icon-color); /* Control icon color with color */
+    filter: drop-shadow(0px 1px 2px rgba(0,0,0,0.3)); 
+}
+
+
+/* --- Mobile-Specific Adjustments --- */
+@media (max-width: 768px) {
+    .button-container {
+        padding: 10px 20px; 
+        border-radius: 30px; 
+    }
+    .instagram-icon-link {
+        bottom: 15px; 
+    }
+    .instagram-icon-link i { /* Adjust font-size for mobile */
+        font-size: 22px;
+    }
+}
+
+@media (max-width: 480px) { 
+    .button-container {
+        padding: 8px 15px; 
+        border-radius: 25px;
+    }
+    .instagram-icon-link {
+        bottom: 10px; 
+    }
+    .instagram-icon-link i { /* Adjust font-size for mobile */
+        font-size: 20px;
+    }
 }
