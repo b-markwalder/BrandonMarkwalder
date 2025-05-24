@@ -1,120 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Brandon Markwalder</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Brandon Markwalder</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anton&display=wrap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css"> 
 
-  <link rel="stylesheet" href="style.css">
-
-  <script src="https://kit.fontawesome.com/de75fbb075.js" crossorigin="anonymous"></script>
-
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
-
+    <script src="https://kit.fontawesome.com/de75fbb075.js" crossorigin="anonymous"></script>
 </head>
 <body>
-  <nav id="nav-links">
-    <ul>
-      <li><a href="#about">About</a></li>
-      <li><a href="#projects">Projects</a></li>
-      <li><a href="#skills">Skills</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
-</nav>
+    <canvas id="canvas"></canvas>
+    <div class="button-container" id="magnet">
+        </div>
 
-  <section id="about">
-    <h1><a href="assets/CV_BrandonMarkwalder.pdf" title="Open my CV" target="_blank">Brandon Markwalder</a> a Web Developer.</h1>
-  </section>
+    <a href="https://www.instagram.com/brandon.markwalder/" target="_blank" rel="noopener noreferrer" class="instagram-icon-link">
+        <i class="fab fa-instagram"></i>
+    </a>
 
-  <section id="projects">
-    <h2>Projects</h2>
-    <div class="container">
-      <div class="wrapper">
-        <i id="right" class="fa-solid fa-angle-left"></i>
-        <ul class="carousel">
-          <li class="card">
-            <h3>freecodecamp: Responsive Web Design</h3>
-            <div class="img"><img src="/assets/fcc-html-css.jpeg" alt="img" draggable="false"></div>
-            <p>This Certification covers HTML for content, CSS for design, CSS variables, accessibility best practices, and responsive design using Flexbox and CSS Grid.</p>
-            <a href="https://www.freecodecamp.org/certification/brandonmarkwalder/responsive-web-design" target="_blank">view</a>
-          </li>
-          <li class="card">
-            <h3>freecodecamp: JavaScript Algorithms and Data Structures</h3>
-            <div class="img"><img src="/assets/fcc-js.jpeg" alt="img" draggable="false"></div>
-            <p>This Certification covers basics like variables, arrays, loops, and the DOM, plus Object Oriented Programming, Functional Programming, algorithmic thinking, local storage, and API data fetching.</p>
-            <a href="https://www.freecodecamp.org/certification/brandonmarkwalder/javascript-algorithms-and-data-structures-v8" target="_blank">view</a>
-          </li>
-          <li class="card">
-            <h3>More coming soon!</h3>
-            <div class="img-placeholder"></div>
-            <p>If you have any project recommendations that highlight my skills, contact me with your ideas!</p>
-            <a href="#contact">Send a Message</a>
-          </li>
-        </ul>
-        <i id="right" class="fa-sharp fa-solid fa-angle-right"></i>
-    </div>
-    </div>
-    </section>
-  
-
-  <section id="skills">
-    <h2>Skills</h2>
-    <div class="skill-box">
-    <div class="wd-skills"><p>HTML</p></div>
-    <div class="wd-skills"><p>CSS</p></div>
-    <div class="wd-skills"><p>JavaScript</p></div>
-    </div>
-    <p>Stay tuned, I'm learning new skills!</p>
-  </section>
-
-  <section id="contact">
-    <h2>Contact</h2>
-
-    <form action="">
-      <div class="contact-wrapper">
-          <div class="left-section">
-              <div class="name-input field">
-                  <input type="text" id="name" class="item" placeholder="Full Name:" autocomplete="off" required>
-              </div>
-              <div class="email-input field">
-                  <input type="email" id="email" class="item" placeholder="Email:" autocomplete="off" required>
-              </div>
-          </div>
-          <div class="middle-section">
-              <div class="textarea-input field">
-                  <textarea id="message" class="item" cols="2" rows="5" placeholder="Message..." autocomplete="off" required></textarea>
-              </div>
-          </div>
-          <div class="right-section">
-              <button type="submit">Submit</button>
-          </div>
-      </div>
-  </form>
-
-  <div id="modal" class="modal">
-    <div class="modal-content">
-      <span class="close">&times;</span>
-      <p id="modal-message"></p>
-    </div>
-  </div>
-
-    <div class="icons">
-    <a id="profile-link" target="_blank" href="mailto:markwalder97@hotmail.com"><i class="fa-solid fa-square-envelope fa-2x icon"></i></a>
-    <a id="profile-link" target="_blank" href="https://www.linkedin.com/in/brandon-markwalder-708436279/?locale=en_US"><i class="fa-brands fa-linkedin fa-2x icon"></i></a>
-    <a id="profile-link" target="_blank" href="https://github.com/b-markwalder"><i class="fa-brands fa-square-github fa-2x icon"></i></a>
-    </div>
-    <div class="my-cv">
-      <a class="cv" href="assets/CV_BrandonMarkwalder.pdf" title="Open my CV" target="_blank">My CV</a>
-    </div>
-  </section>
-
-  <footer>
-  <p>&#169 2024 Brandon Markwalder. All rights reserved.</p>
-  </footer>
-
-  <script src="https://smtpjs.com/v3/smtp.js"></script>
-  <script src="script.js"></script>
+    <script src="script.js" defer></script>
 </body>
 </html>
